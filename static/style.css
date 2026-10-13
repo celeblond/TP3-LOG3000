@@ -37,6 +37,7 @@ h1 {
    color: #fff;
 }
 
+/* La grille à quatre colonnes reprend la disposition des boutons définie dans index.html. */
 .buttons {
    display: grid;
    grid-template-columns: repeat(4, 1fr);

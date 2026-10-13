@@ -37,11 +37,20 @@
 </div>
 
 <script>
+   /**
+    * Ajoute un chiffre ou un opérateur à l'affichage.
+    * @param {string} value - Caractère à ajouter.
+    * @returns {void} Modifie directement l'affichage.
+    */
    function appendToDisplay(value) {
       const display = document.getElementById('display');
       display.value += value;
    }
 
+   /**
+    * Efface le contenu de l'affichage.
+    * @returns {void} Modifie directement l'affichage.
+    */
    function clearDisplay() {
       document.getElementById('display').value = '';
    }
