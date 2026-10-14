@@ -1,17 +1,19 @@
 # Tests de la calculatrice
 
-Ce répertoire contient les tests automatisés de la logique Python de la calculatrice.
+Ce répertoire contient les tests des opérations, de l'analyse des expressions, des routes Flask et de l'interface HTML.
 
 ## Fichiers
 
-- `test_operators.py` : tests unitaires des quatre opérations arithmétiques, dont les valeurs négatives, décimales et la division par zéro.
-- `test_calculate.py` : tests de l'analyse des expressions, des résultats arithmétiques et des erreurs pour les entrées mal formées.
+- `test_operators.py` : addition, soustraction, multiplication, division et cas limites.
+- `test_calculate.py` : calcul des expressions et traitement des entrées invalides.
+- `test_frontend.py` : routes Flask, formulaires et textes des boutons.
+- `resultats_initiaux_backend.md` : résultats des tests avant les corrections.
 
-Les tests vérifient le comportement attendu d'une calculatrice, et non uniquement celui du code initial. Certains tests peuvent donc échouer avant la correction des bogues.
+Les tests backend utilisent `pytest`. Les tests frontend utilisent `unittest` et le client de test Flask. Les vérifications des boutons analysent le HTML, sans exécuter JavaScript dans un navigateur.
 
 ## Prérequis
 
-Depuis la racine du dépôt, installer Flask et pytest :
+Depuis la racine du dépôt :
 
 ```bash
 python -m pip install Flask pytest
@@ -19,34 +21,38 @@ python -m pip install Flask pytest
 
 ## Exécution
 
-Depuis la racine du dépôt :
-
-```bash
-python -m pytest
-```
-
-Pour exécuter un seul module :
-
-```bash
-python -m pytest tests/test_operators.py
-python -m pytest tests/test_calculate.py
-```
-
-Pour afficher le détail de chaque cas :
+Toute la suite :
 
 ```bash
 python -m pytest -v
 ```
 
-Sur certains systèmes, utiliser `python3` à la place de `python`.
+Tests backend seulement :
 
-## Suivi des résultats
+```bash
+python -m pytest tests/test_operators.py tests/test_calculate.py -v
+```
 
-1. Exécuter les tests sur la version initiale avant toute correction.
-2. Conserver la sortie du terminal, les noms des cas échoués et les messages d'erreur.
-3. Ouvrir et assigner une Issue GitHub pour chaque bogue distinct confirmé.
-4. Réexécuter les tests concernés sur la branche de correction correspondante.
-5. Consigner les résultats dans la Pull Request avant la revue.
-6. Après les fusions, exécuter l'ensemble des tests sur `main` et documenter le résultat.
+Tests frontend seulement :
 
-Les tests du formulaire Flask et les vérifications de l'interface seront ajoutés séparément. Aucune exécution ni réussite des tests présentés ici n'est encore attestée.
+```bash
+python -m unittest discover -s tests -p "test_frontend.py" -v
+```
+
+Sur certains systèmes, utiliser `python3` plutôt que `python`.
+
+## Suivi des bogues
+
+1. Exécuter les tests avant de corriger le code et conserver les échecs.
+2. Créer une Issue pour chaque bogue distinct et l'assigner à un membre.
+3. Corriger le problème sur une branche dédiée.
+4. Relancer le test concerné et noter le résultat dans la Pull Request.
+5. Faire revoir la Pull Request avant la fusion.
+6. Après toutes les fusions, relancer la suite complète sur `main`.
+
+## Résultats initiaux
+
+- Backend : 26 tests exécutés sur le poste de Charles-Émile, 16 réussis et 10 échoués. Voir `resultats_initiaux_backend.md`.
+- Frontend : la PR #3 rapporte 9 tests exécutés, 5 réussis et 4 échoués. Le journal d'exécution initial reste à conserver pour le rapport.
+
+Ces échecs correspondent aux problèmes suivis dans les Issues GitHub. La réussite de tous les tests ne pourra être confirmée qu'après les corrections et leur intégration.
