@@ -1,34 +1,48 @@
 # Résultats initiaux des tests backend
 
-Exécution du 13 octobre 2026 sur le code original, sans correction.
+Les tests ont été exécutés sur le code original, avant toute correction.
 
-## Commande
+## Première exécution : opérations
+
+Commande :
 
 ```bash
 python -m pytest tests/test_operators.py -v
 ```
 
-Environnement : Python 3.13.5, pytest 9.0.2.
+Résultat : **12 tests, 5 réussis, 7 échoués**.
 
-Les versions de `operators.py` et `tests/test_operators.py` utilisées pour cette exécution correspondent exactement aux fichiers des branches `main` et `tests/backend-initial`, respectivement (empreintes Git vérifiées).
+## Exécution complète sur le poste de Charles-Émile
 
-## Résultat
+Journal transmis le 14 octobre 2026.
 
-**12 tests exécutés, 5 réussis, 7 échoués.**
+- Système : Windows
+- Python : 3.12.10
+- pytest : 9.1.1
+- Branche : `tests/backend-initial`
 
-| Fonction | Réussites | Échecs | Constat |
-| --- | ---: | ---: | --- |
-| `add` | 3 | 0 | Résultats attendus |
-| `subtract` | 0 | 2 | Ordre des opérandes inversé |
-| `multiply` | 0 | 3 | Puissance au lieu du produit |
-| `divide` | 2 | 2 | Quotient entier pour les divisions non exactes |
+Commande :
 
-Pour `divide`, le test de division par zéro et celui du quotient entier ont réussi.
+```bash
+python -m pytest tests/test_operators.py tests/test_calculate.py -v
+```
 
-## Exemples d'échecs
+**Résultat : 26 tests exécutés, 16 réussis, 10 échoués.**
 
-- `subtract(9, 4)` : obtenu -5, attendu 5.
-- `multiply(3, 4)` : obtenu 81, attendu 12.
-- `divide(7, 2)` : obtenu 3, attendu 3.5.
+| Module | Tests | Réussites | Échecs |
+| --- | ---: | ---: | ---: |
+| `test_operators.py` | 12 | 5 | 7 |
+| `test_calculate.py` | 14 | 11 | 3 |
+| **Total** | **26** | **16** | **10** |
 
-Les tests de `calculate()` n'ont pas été exécutés dans cet environnement parce que Flask n'y est pas installé. Ils restent à vérifier avec Flask avant toute correction.
+## Bogues confirmés
+
+| Issue | Problème | Cas en échec | Exemple |
+| --- | --- | ---: | --- |
+| #13 | Soustraction inversée | 3 | `subtract(9, 4)` donne -5 au lieu de 5 |
+| #14 | Puissance au lieu de multiplication | 4 | `multiply(3, 4)` donne 81 au lieu de 12 |
+| #15 | Division entière au lieu de division usuelle | 3 | `divide(7, 2)` donne 3 au lieu de 3.5 |
+
+Les tests de `calculate()` échouent pour ces mêmes trois opérations, car cette fonction appelle les opérations de `operators.py`. Il ne s'agit pas de trois nouveaux bogues.
+
+Les cas d'addition, les expressions invalides et la division par zéro testés ont réussi. Les corrections seront réalisées dans des branches distinctes, une par Issue. Les tests seront relancés avant les fusions.
