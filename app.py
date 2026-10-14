@@ -1,3 +1,5 @@
+"""Application Flask et traitement d'expressions arithmetiques simples."""
+
 from flask import Flask, request, render_template
 from operators import add, subtract, multiply, divide
 
@@ -11,6 +13,18 @@ OPS = {
 }
 
 def calculate(expr: str):
+    """Analyse une expression et appelle l'operation arithmetique correspondante.
+
+    Parametres:
+        expr (str): Expression contenant deux operandes et un operateur.
+
+    Retour:
+        float: Resultat numerique produit par l'operation choisie.
+
+    Exceptions:
+        ValueError: Expression vide, mal formee ou non numerique.
+        ZeroDivisionError: Division par zero.
+    """
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
@@ -43,6 +57,14 @@ def calculate(expr: str):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """Affiche la calculatrice et traite les expressions envoyees par formulaire.
+
+    Entrees:
+        Aucune entree directe. Lit la methode HTTP et le champ "display".
+
+    Retour:
+        str: Page HTML contenant le resultat ou un message d'erreur.
+    """
     result = ""
     if request.method == 'POST':
         expression = request.form.get('display', '')
