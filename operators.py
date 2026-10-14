@@ -34,7 +34,7 @@ def multiply(a,b):
     Retour:
         int ou float: Resultat de la fonction de multiplication.
     """
-    return a ** b
+    return a * b
 
 def divide(a,b):
     """Traite la division entre deux nombres.
