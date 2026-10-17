@@ -49,4 +49,4 @@ def divide(a,b):
     Exceptions:
         ZeroDivisionError: Second operande egal a zero.
     """
-    return a // b
+    return a / b
