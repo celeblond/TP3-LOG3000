@@ -8,6 +8,7 @@ Ce répertoire contient les tests des opérations, de l'analyse des expressions,
 - `test_calculate.py` : calcul des expressions et traitement des entrées invalides.
 - `test_frontend.py` : routes Flask, formulaires et textes des boutons.
 - `resultats_initiaux_backend.md` : résultats des tests avant les corrections.
+- `resultats_finaux.md` : résultat de la suite complète après les fusions.
 
 Les tests backend utilisent `pytest`. Les tests frontend utilisent `unittest` et le client de test Flask. Les vérifications des boutons analysent le HTML, sans exécuter JavaScript dans un navigateur.
 
@@ -55,4 +56,8 @@ Sur certains systèmes, utiliser `python3` plutôt que `python`.
 - Backend : 26 tests exécutés sur le poste de Charles-Émile, 16 réussis et 10 échoués. Voir `resultats_initiaux_backend.md`.
 - Frontend : la PR #3 rapporte 9 tests exécutés, 5 réussis et 4 échoués. Le journal d'exécution initial reste à conserver pour le rapport.
 
-Ces échecs correspondent aux problèmes suivis dans les Issues GitHub. La réussite de tous les tests ne pourra être confirmée qu'après les corrections et leur intégration.
+Ces échecs correspondent aux problèmes suivis dans les Issues GitHub.
+
+## Résultats finaux
+
+Après les fusions, une exécution locale de la suite sur `main` le 17 octobre 2026 a donné **35 tests réussis sur 35, aucun échec**. Voir `resultats_finaux.md`.
