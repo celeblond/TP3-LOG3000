@@ -15,9 +15,9 @@ Le TP3 consiste à organiser le dépôt GitHub, documenter la base de code exist
 - `operators.py` : fonctions arithmétiques appelées par l'application.
 - `templates/index.html` : interface de la calculatrice et fonctions JavaScript des boutons.
 - `static/style.css` : mise en forme de l'interface.
-- `tests/` : répertoire prévu pour les tests automatisés, à ajouter pendant la phase de tests.
+- `tests/` : tests automatisés du backend et du frontend, avec leurs résultats initiaux et finaux.
 
-Les répertoires du projet disposeront également d'un README précisant le rôle de leurs fichiers et leurs dépendances.
+Les répertoires `templates/`, `static/` et `tests/` possèdent chacun un README décrivant leurs fichiers et leurs dépendances.
 
 ## Prérequis
 
@@ -68,20 +68,20 @@ Le serveur lancé de cette manière est destiné au développement local.
 4. Cliquer sur `=` pour envoyer l'expression au serveur et afficher la réponse.
 5. Utiliser `C` pour vider le champ d'affichage.
 
-L'analyseur de `app.py` est conçu pour traiter une expression composée de deux opérandes et d'un seul opérateur. En cas d'entrée invalide ou d'erreur de calcul, l'application affiche un message d'erreur. Le comportement de la version initiale doit être vérifié par les tests avant toute correction.
+L'analyseur de `app.py` est conçu pour traiter une expression composée de deux opérandes et d'un seul opérateur. En cas d'entrée invalide ou d'erreur de calcul, l'application affiche un message d'erreur. Les bogues de la version initiale ont été détectés et corrigés dans des Pull Requests distinctes.
 
 ## Tests
 
-Les tests seront ajoutés pendant la phase de tests du TP3. Le répertoire `tests/` et son README préciseront les cas couverts. Aucun résultat de test n'est présumé à cette étape.
-
-La commande prévue pour exécuter la suite, une fois les tests ajoutés et `pytest` installé, est :
+Installer les dépendances, puis lancer toute la suite depuis la racine du dépôt :
 
 ```bash
-python -m pip install pytest
-python -m pytest
+python -m pip install Flask pytest
+python -m pytest -v
 ```
 
-Les résultats initiaux, les corrections et les résultats finaux seront documentés dans les Issues et Pull Requests pertinentes.
+La suite comprend 26 cas backend et 9 cas frontend. Après fusion des corrections, l'exécution locale du 17 octobre 2026 a donné **35 tests réussis sur 35**.
+
+Voir `tests/README.md`, `tests/resultats_initiaux_backend.md` et `tests/resultats_finaux.md` pour les commandes et les résultats.
 
 ## Contributions
 
