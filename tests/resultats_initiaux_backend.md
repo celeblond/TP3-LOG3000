@@ -12,9 +12,7 @@ python -m pytest tests/test_operators.py -v
 
 Résultat : **12 tests, 5 réussis, 7 échoués**.
 
-## Exécution complète sur le poste de Charles-Émile
-
-Journal transmis le 14 octobre 2026.
+## Résultats initiaux du backend
 
 - Système : Windows
 - Python : 3.12.10
