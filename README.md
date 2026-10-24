@@ -79,7 +79,7 @@ python -m pip install Flask pytest
 python -m pytest -v
 ```
 
-La suite comprend 26 cas backend et 9 cas frontend. Après fusion des corrections, l'exécution locale du 17 octobre 2026 a donné **35 tests réussis sur 35**.
+La suite comprend 26 tests backend et 9 tests frontend. Après correction, les 35 tests réussissent.
 
 Voir `tests/README.md`, `tests/resultats_initiaux_backend.md` et `tests/resultats_finaux.md` pour les commandes et les résultats.
 
