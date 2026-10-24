@@ -54,10 +54,10 @@ Sur certains systèmes, utiliser `python3` plutôt que `python`.
 ## Résultats initiaux
 
 - Backend : 26 tests exécutés sur le poste de Charles-Émile, 16 réussis et 10 échoués. Voir `resultats_initiaux_backend.md`.
-- Frontend : la PR #3 rapporte 9 tests exécutés, 5 réussis et 4 échoués. Le journal d'exécution initial reste à conserver pour le rapport.
+- Frontend : 9 tests exécutés, 5 réussis et 4 échoués (voir PR #3).
 
 Ces échecs correspondent aux problèmes suivis dans les Issues GitHub.
 
 ## Résultats finaux
 
-Après les fusions, une exécution locale de la suite sur `main` le 17 octobre 2026 a donné **35 tests réussis sur 35, aucun échec**. Voir `resultats_finaux.md`.
+Après les corrections, les 35 tests réussissent sur `main`. Voir `resultats_finaux.md`.
