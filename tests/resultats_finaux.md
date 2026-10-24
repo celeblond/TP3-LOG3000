@@ -20,8 +20,6 @@ Exécution de la suite complète sur la branche `main`, après la fusion des cor
 | `tests/test_frontend.py` | 9 | 0 |
 | **Total** | **35** | **0** |
 
-Le journal d'exécution a été fourni par Charles-Émile après les fusions dans `main`. Il s'agit d'une exécution locale, pas d'une exécution CI.
-
 ## Corrections vérifiées
 
 | Issue | Correction | Pull Request |
