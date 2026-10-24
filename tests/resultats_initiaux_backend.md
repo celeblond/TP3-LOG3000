@@ -43,4 +43,4 @@ python -m pytest tests/test_operators.py tests/test_calculate.py -v
 
 Les tests de `calculate()` échouent pour ces mêmes trois opérations, car cette fonction appelle les opérations de `operators.py`. Il ne s'agit pas de trois nouveaux bogues.
 
-Les cas d'addition, les expressions invalides et la division par zéro testés ont réussi. Les corrections seront réalisées dans des branches distinctes, une par Issue. Les tests seront relancés avant les fusions.
+Les cas d'addition, les expressions invalides et la division par zéro testés ont réussi.
