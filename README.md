@@ -46,7 +46,7 @@ Les répertoires `templates/`, `static/` et `tests/` possèdent chacun un README
    python -m pip install Flask
    ```
 
-Sur certains systèmes, la commande Python est `python3` plutôt que `python`. Comme le dépôt est privé pendant le développement, le clonage nécessite un compte autorisé à y accéder.
+Sur certains systèmes, la commande Python est `python3` plutôt que `python`.
 
 ## Lancement
 
